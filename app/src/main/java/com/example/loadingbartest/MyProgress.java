@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,8 +39,11 @@ public class MyProgress extends LinearLayout {
         mTvButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                startProgressThread();
-
+                if (mTvButton.isSelected()){
+                    Toast.makeText(getContext(),"已经点击过了",Toast.LENGTH_LONG).show();
+                }else {
+                    startProgressThread();
+                }
             }
         });
 
